@@ -18,7 +18,12 @@ def gen_list(start: int, stop: int, parity: Parity) -> List[int]:
     :param parity:
     :return:
     """
-    pass
+    if parity == Parity.ODD:
+        return [i for i in range(start, stop) if i % 2 !=0]
+    elif parity == Parity.EVEN:
+        return [i for i in range(start, stop) if i % 2 == 0]
+
+
 
 
 def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
@@ -33,7 +38,11 @@ def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
     :param strategy:
     :return:
     """
-    pass
+    dicts = {}
+    keys = list(range(start, stop))
+    for x in keys:
+        dicts[x] = strategy(x)
+    return dicts
 
 
 def gen_set(val_in: str) -> Set:
@@ -45,4 +54,16 @@ def gen_set(val_in: str) -> Set:
     :param val_in:
     :return:
     """
-    pass
+    if val_in.islower():
+        x = []
+        for i in val_in:
+            x.append(i.upper())
+        return set(x)
+    elif not val_in.isupper():
+        x= []
+        for i in val_in:
+            if i.islower():
+                x.append(i.upper())
+        return set(x)
+    elif val_in.isupper():
+       return set()
