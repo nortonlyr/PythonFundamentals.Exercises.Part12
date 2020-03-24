@@ -51,8 +51,8 @@ def gen_set(val_in: str) -> Set:
     what this method was supposed to do. Hey if you do, maybe you could do some good in this world by
     updating this here docstring to something useful.
 
-    :param val_in:  in string input
-    :return:    a set of only lower-case characters from the string input, and return them all capitalized in the set
+    :param val_in:  the string input
+    :return:    a set of lower-case only characters from the string input, and then return characters all capitalized in the set
     """
     if val_in.islower():
         x = []
