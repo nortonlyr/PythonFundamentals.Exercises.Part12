@@ -13,10 +13,10 @@ def gen_list(start: int, stop: int, parity: Parity) -> List[int]:
     what this method was supposed to do. Hey if you do, maybe you could do some good in this world by
     updating this here docstring to something useful.
 
-    :param start:
-    :param stop:
-    :param parity:
-    :return:
+    :param start:   the integer that start the list (inclusive)
+    :param stop:    the integer that stop the list (exclusive)
+    :param parity:  the method will determinate which parity is passed
+    :return:    a list in specific range of parity
     """
     if parity == Parity.ODD:
         return [i for i in range(start, stop) if i % 2 !=0]
@@ -33,10 +33,10 @@ def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
     updating this here docstring to something useful.
 
 
-    :param start:
-    :param stop:
-    :param strategy:
-    :return:
+    :param start:   the integer that start the list (inclusive)
+    :param stop:    the integer that stop the list (inclusive)
+    :param strategy:    a function to carryout on each item in the list
+    :return:    a dictioanry with key in range, the value has been applied with stratergy method for each key value.
     """
     dicts = {}
     keys = list(range(start, stop))
@@ -51,8 +51,8 @@ def gen_set(val_in: str) -> Set:
     what this method was supposed to do. Hey if you do, maybe you could do some good in this world by
     updating this here docstring to something useful.
 
-    :param val_in:
-    :return:
+    :param val_in:  in string input
+    :return:    a set of only lower-case characters from the string input, and return them all capitalized in the set
     """
     if val_in.islower():
         x = []
